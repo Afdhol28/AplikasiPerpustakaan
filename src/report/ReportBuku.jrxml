@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42c109ba-674e-473f-9b7c-53b47157d0e8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tb_buku.`id_buku` AS tb_buku_id_buku,
+     tb_buku.`judul` AS tb_buku_judul,
+     tb_buku.`pengarang` AS tb_buku_pengarang,
+     tb_buku.`penerbit` AS tb_buku_penerbit,
+     tb_buku.`kategori` AS tb_buku_kategori,
+     tb_buku.`tahun` AS tb_buku_tahun
+FROM
+     `tb_buku` tb_buku]]>
+	</queryString>
+	<field name="tb_buku_id_buku" class="java.lang.String"/>
+	<field name="tb_buku_judul" class="java.lang.String"/>
+	<field name="tb_buku_pengarang" class="java.lang.String"/>
+	<field name="tb_buku_penerbit" class="java.lang.String"/>
+	<field name="tb_buku_kategori" class="java.lang.String"/>
+	<field name="tb_buku_tahun" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="0" width="208" height="20" uuid="09d98581-f7af-4b78-a93f-57490b2d1a6f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BUKU PERPUSTAKAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="20" width="152" height="20" uuid="678bb71c-83a2-4ab8-be7f-bd261ed56122"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SMP NEGERI 1 JATIROTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="40" width="152" height="20" uuid="b53cddf4-2ffa-468b-8e1e-b3776db0fb2a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tahun Pelajaran 2019/2020]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="60" width="303" height="20" uuid="d2b81751-c195-4381-8587-f9daf54b0989"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jln. Jatiroto - Jatisrono, Jatiroto, Kec. Jatiroto, Kab. Wonogiri]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="-18" y="0" width="66" height="23" uuid="517ed431-a21d-466b-a81c-bd54e0a778b7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="0" width="136" height="23" uuid="bfb74a49-d286-4c1d-bbfd-da98310d945e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUDUL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="0" width="117" height="23" uuid="e3db835c-4dad-46f0-800d-d0f74c6fda7b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PENGARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="0" width="100" height="23" uuid="d8951760-2c44-4bb6-9ba0-8dfdff3f7010"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PENERBIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="70" height="23" uuid="08abd8e3-1edf-4cb2-a3b7-ed833153e362"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="0" width="40" height="23" uuid="279384b1-7cb3-4db5-946b-3c7e580d3d57"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAHUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="511" y="0" width="44" height="23" uuid="a6315495-d2a6-4397-82c0-1be2d549430d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JML]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22">
+			<textField>
+				<reportElement x="-18" y="0" width="66" height="22" uuid="79e6c689-2800-4c49-8732-b1549257de33"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_buku_id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="0" width="136" height="22" uuid="3abe14ce-a66a-46b9-ba65-bdd57235a203"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_buku_judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="117" height="22" uuid="ffcba40f-9f19-4c45-9f03-cddc6389a7ba"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_buku_pengarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="100" height="22" uuid="94f970a0-b58c-4948-91c8-d64a94c77a3c"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_buku_penerbit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="70" height="22" uuid="bed8d15a-e592-42ff-9c44-eeffa242e8b1"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_buku_kategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="0" width="40" height="22" uuid="49c79075-1525-4761-8a4f-9389b970b1f2"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_buku_tahun}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="511" y="0" width="44" height="22" uuid="7b6ec045-3107-4be2-bc93-a7d2d94289aa"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="21">
+			<textField>
+				<reportElement x="267" y="0" width="23" height="20" uuid="750af747-f822-4950-ba7f-b22ed4818d43"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="141">
+			<staticText>
+				<reportElement x="433" y="113" width="100" height="20" uuid="13ee8aa2-9c58-40ef-b8df-cf5ac7cb8d71"/>
+				<text><![CDATA[Ika Febri Andira, A.Md]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="35" width="100" height="20" uuid="27b87b56-79eb-4dff-a4da-13221846c45a"/>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="55" width="100" height="20" uuid="f126cb9b-92f5-4fdf-8fd4-efd8c93f02ee"/>
+				<text><![CDATA[Kepala Perpustakaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="113" width="100" height="20" uuid="ed9da578-7f0f-4108-afda-991a405f0f7e"/>
+				<text><![CDATA[Drs. Amir, M.Pd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-18" y="0" width="419" height="20" uuid="a46125a3-4f21-4bca-a795-3f55e5cf7727"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="110" height="20" uuid="2438d08e-84c1-4b01-a3db-c7319398428f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="511" y="0" width="44" height="20" uuid="07d80138-f9be-4a45-b368-1e131ee0d9ae"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="423" y="55" width="122" height="20" uuid="e1511d40-f6d9-4cfc-a817-72b0cc5236a1"/>
+				<text><![CDATA[Pengelola Perpustakaan]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="423" y="35" width="100" height="20" uuid="2a5bbd41-e2f8-4d8a-8fc7-01aaa2c5e2cc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

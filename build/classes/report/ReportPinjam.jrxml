@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="40fa1616-9cbe-4679-8b39-b12cb0930525">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="tgl1" class="java.lang.String"/>
+	<parameter name="tgl2" class="java.lang.String"/>
+	<parameter name="defaultValue" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer("1")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tb_pinjam.`id_pinjam` AS tb_pinjam_id_pinjam,
+     tb_pinjam.`id_buku` AS tb_pinjam_id_buku,
+     tb_pinjam.`pengarang` AS tb_pinjam_pengarang,
+     tb_pinjam.`tahun` AS tb_pinjam_tahun,
+     tb_pinjam.`id_anggota` AS tb_pinjam_id_anggota,
+     tb_pinjam.`kelas` AS tb_pinjam_kelas,
+     date_format(tgl_pinjam, '%d - %m - %Y') AS tb_pinjam
+FROM
+     `tb_pinjam` tb_pinjam
+where 
+      tgl_pinjam between $P{tgl1} and $P{tgl2}]]>
+	</queryString>
+	<field name="tb_pinjam_id_pinjam" class="java.lang.String"/>
+	<field name="tb_pinjam_id_buku" class="java.lang.String"/>
+	<field name="tb_pinjam_pengarang" class="java.lang.String"/>
+	<field name="tb_pinjam_tahun" class="java.lang.Integer"/>
+	<field name="tb_pinjam_id_anggota" class="java.lang.String"/>
+	<field name="tb_pinjam_kelas" class="java.lang.String"/>
+	<field name="tb_pinjam" class="java.lang.String"/>
+	<variable name="noUrut" class="java.lang.Integer" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$V{noUrut}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="212" y="30" width="152" height="20" uuid="a5c28bf0-fc2c-43a6-af51-747716639854"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SMP NEGERI 1 JATIROTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="70" width="303" height="20" uuid="5026eb1e-5a1b-46c7-b979-7dc959ab444a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jln. Jatiroto - Jatisrono, Jatiroto, Kec. Jatiroto, Kab. Wonogiri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="10" width="247" height="20" uuid="f72710ab-e475-4d77-8e00-8e92ea808dd0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PEMINJAMAN BUKU PERPUSTAKAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="50" width="152" height="20" uuid="4aafc055-05a4-442f-9d39-37c8622a3307"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tahun Pelajaran 2019/2020]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="35" y="0" width="70" height="22" uuid="2e40a9f4-eab1-4e69-b6a5-e2404713a35f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="0" width="66" height="22" uuid="969115e2-87ec-406d-884b-9e123763d81f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="0" width="60" height="22" uuid="d2ca1545-541b-47f0-b467-5daabea3b699"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAHUN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="0" width="113" height="22" uuid="665a5e05-8229-4274-a802-eebee66a5d98"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PENGARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="0" width="79" height="22" uuid="fa9e8e57-2830-4516-9acf-b1982fa50d42"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ANGGGOTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="0" width="55" height="22" uuid="6224182b-ec19-4f8d-bb1a-5dd29d31ecb0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KELAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="0" width="78" height="22" uuid="a4bd046e-165d-4dea-911e-e7c55dd5dcb5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TGL PINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="34" height="22" uuid="441ef9bc-6263-4128-b947-74016e47da90"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="35" y="0" width="70" height="26" uuid="cb479c09-e1bf-47e0-a403-e346374b8670"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_pinjam_id_pinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="0" width="66" height="26" uuid="0092510c-738b-48a8-ae45-d90f20b5001b"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_pinjam_id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="60" height="26" uuid="33bed489-1ace-452f-8e20-17fcda564485"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_pinjam_tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="0" width="113" height="26" uuid="308919b4-63c0-4a92-88eb-ec8db280e007"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{tb_pinjam_pengarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="0" width="79" height="26" uuid="11698ef9-b383-4bc1-9388-217ac5cd3b76"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_pinjam_id_anggota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="55" height="26" uuid="7b8e1603-976a-4b8d-a041-fa30b677d84b"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_pinjam_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="78" height="26" uuid="6733afe5-d66d-4038-add7-ebd3885f14d0"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tb_pinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="34" height="26" uuid="111f350c-e079-47f8-ab4e-be4b977c4483"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new Integer($V{noUrut}.intValue()+$P{defaultValue}.intValue())]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="271" y="0" width="23" height="20" uuid="cc7d2544-f719-4277-a0b8-44146b965fcf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="145" splitType="Stretch">
+			<staticText>
+				<reportElement x="423" y="123" width="100" height="20" uuid="78179e33-439c-458a-9cc7-d7679b0488e5"/>
+				<text><![CDATA[Ika Febri Andira, A.Md]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="45" width="132" height="20" uuid="9f9ee62e-6494-4737-ab92-1b25905040e4"/>
+				<text><![CDATA[Pengelola Perpustakaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="123" width="100" height="20" uuid="604a035d-0343-4878-9e1e-ad781b882106"/>
+				<text><![CDATA[Drs. Amir, M.Pd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="25" width="100" height="20" uuid="69016114-761f-4f99-9763-276ff7e2980b"/>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="45" width="100" height="20" uuid="276d06aa-0cc8-46ce-af9f-a86377167ae0"/>
+				<text><![CDATA[Kepala Perpustakaan]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="423" y="25" width="100" height="20" uuid="68ac776c-696f-469d-88e9-7a2ddabdd283"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
